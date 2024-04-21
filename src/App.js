@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import DraggableBlock from './components/DraggableBlock';
+import Canvas from './components/Canvas';
+import { v4 as uuidv4 } from 'uuid';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <DraggableBlock id={uuidv4()} type="SELECT">SELECT</DraggableBlock>
+        <DraggableBlock id={uuidv4()} type="FROM">FROM</DraggableBlock>
+        <DraggableBlock id={uuidv4()} type="WHERE">WHERE</DraggableBlock>
+      </div>
+      <Canvas />
     </div>
   );
 }
